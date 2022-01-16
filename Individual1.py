@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
+def vowel_words():
+    with open('text.txt') as f:
+        words = f.read().splitlines()
+        vowels = ('a', 'e', 'y', 'u', 'i', 'o')
+        v = []
+        for word in words:
+            if word.lower().startswith(vowels):
+                v.append(word)
+        print(v)
+
+
 if __name__ == "__main__":
-    with open('text.txt', 'r', encoding='utf-8') as f:
-        words = f.read()
-
-        for word in words.split('.'):
-            if "aeyuio" in word:
-                print(word)
-
-f.close()
+    vowel_words()
